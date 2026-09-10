@@ -27,12 +27,12 @@ public class MagpieRunner {
     // try-with-resources closes the Scanner even if something throws.
 
     try (Scanner in = new Scanner(System.in)) {
-      System.out.println("Input: ");
+      System.out.print("Input: ");
       String statement = in.nextLine();
 
       while (!statement.equalsIgnoreCase("Bye")) {
         System.out.println(maggie.getResponse(statement));
-        System.out.println("Input: ");
+        System.out.print("Input: ");
         statement = in.nextLine();
       }
     }
