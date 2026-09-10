@@ -21,14 +21,18 @@ public class MagpieRunner {
   public static void main(String[] args) {
     Magpie maggie = new Magpie();
 
+  
     System.out.println(maggie.getGreeting());
 
     // try-with-resources closes the Scanner even if something throws.
+
     try (Scanner in = new Scanner(System.in)) {
+      System.out.println("Input: ");
       String statement = in.nextLine();
 
       while (!statement.equalsIgnoreCase("Bye")) {
         System.out.println(maggie.getResponse(statement));
+        System.out.println("Input: ");
         statement = in.nextLine();
       }
     }
