@@ -65,6 +65,13 @@ public class Magpie {
     } else if ((statement.indexOf("dog") != -1) || (statement.indexOf("cat") != -1)
         || (statement.indexOf("fish") != -1)) {
       response = "Tell me more about your pets.";
+    } else if ((statement.indexOf("brother") != -1) || (statement.indexOf("mother") != 1) || (statement.indexOf("sister") != -1)
+        || (statement.indexOf("father") != -1)) {
+      response = "Tell me more about your family.";
+    }
+    
+    else {
+      response = getRandomResponse();
     }
     // TODO Milestone 2: handle the empty statement — the user just pressed Enter.
     // TODO Milestone 3: move your searches to findKeyword so whole words match.
@@ -92,8 +99,16 @@ public class Magpie {
    * @return a non-committal string
    */
   private String getRandomResponse() {
-    // TODO: return one of several replies, chosen at random.
-    return "PLACEHOLDER DEFAULT.";
+    String[] responses = {
+      "Cool",
+      "Nice weather we've been having",
+      "I like your shoes",
+      "Any plans for the weekend?",
+      "I am a computer"
+    };
+    int r = (int)(Math.random()*responses.length);
+
+    return responses[r];
   }
 
   /**
