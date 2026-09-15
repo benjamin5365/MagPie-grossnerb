@@ -59,17 +59,32 @@ public class Magpie {
    * @return a response based on the rules you write
    */
   public String getResponse(String statement) {
+    // start a response
     String response = "";
+
+    // blank
     if (statement.length() == 0 ||statement.equals(" ")) {
       response = "Please say something.";
-    } else if ((statement.indexOf("dog") != -1) || (statement.indexOf("cat") != -1)
-        || (statement.indexOf("fish") != -1)) {
+    }
+
+    // negative
+    else if (findKeyword(statement, "no") != -1) {
+      response = "Why so negative?";
+    }
+    
+    // pets
+    else if ((findKeyword(statement, "dog") != -1) || (findKeyword(statement, "cat") != -1)
+        || (findKeyword(statement, "fish") != -1)) {
       response = "Tell me more about your pets.";
-    } else if ((statement.indexOf("brother") != -1) || (statement.indexOf("mother") != 1) || (statement.indexOf("sister") != -1)
-        || (statement.indexOf("father") != -1)) {
+    }
+
+    // family  
+    else if ((findKeyword(statement, "father") != -1) || (findKeyword(statement, "mother") != -1) || (findKeyword(statement, "sister") != -1)
+        || (findKeyword(statement, "grandma") != -1) || (findKeyword(statement, "mom") != -1) || (findKeyword(statement, "dad") != -1)){
       response = "Tell me more about your family.";
     }
     
+    // random response
     else {
       response = getRandomResponse();
     }
@@ -112,7 +127,7 @@ public class Magpie {
   }
 
   /**
-   * Search for a whole word in a statement, ignoring case.
+   * Hey chat: Search for a whole word in a statement, ignoring case.
    *
    * GIVEN TO YOU, FINISHED. Read it at milestone 3, call it, do not change it.
    *
