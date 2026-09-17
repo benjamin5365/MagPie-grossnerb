@@ -62,29 +62,29 @@ public class Magpie {
     // start a response
     String response = "";
 
-    // blank
-    if (statement.length() == 0 ||statement.equals(" ")) {
+    // BLANK
+    if (statement.length() == 0 || statement.equals(" ")) {
       response = "Please say something.";
     }
 
-    // negative
+    // NEGATIVE
     else if (findKeyword(statement, "no") != -1) {
       response = "Why so negative?";
     }
     
-    // pets
+    // PETS
     else if ((findKeyword(statement, "dog") != -1) || (findKeyword(statement, "cat") != -1)
         || (findKeyword(statement, "fish") != -1)) {
       response = "Tell me more about your pets.";
     }
 
-    // family  
+    // FAMILY  
     else if ((findKeyword(statement, "father") != -1) || (findKeyword(statement, "mother") != -1) || (findKeyword(statement, "sister") != -1)
         || (findKeyword(statement, "grandma") != -1) || (findKeyword(statement, "mom") != -1) || (findKeyword(statement, "dad") != -1)){
       response = "Tell me more about your family.";
     }
     
-    // random response
+    // RANDOM
     else {
       response = getRandomResponse();
     }
