@@ -73,15 +73,19 @@ public class Magpie {
     }
     
     // PETS
-    else if ((findKeyword(statement, "dog") != -1) || (findKeyword(statement, "cat") != -1)
-        || (findKeyword(statement, "fish") != -1)) {
+    else if (findKeyword(statement, "dog") != -1 || findKeyword(statement, "cat") != -1
+        || findKeyword(statement, "fish") != -1) {
       response = "Tell me more about your pets.";
     }
 
     // FAMILY  
-    else if ((findKeyword(statement, "father") != -1) || (findKeyword(statement, "mother") != -1) || (findKeyword(statement, "sister") != -1)
-        || (findKeyword(statement, "grandma") != -1) || (findKeyword(statement, "mom") != -1) || (findKeyword(statement, "dad") != -1)){
+    else if (findKeyword(statement, "father") != -1 || findKeyword(statement, "mother") != -1 || findKeyword(statement, "sister") != -1
+        || findKeyword(statement, "grandma") != -1 || findKeyword(statement, "mom") != -1 || findKeyword(statement, "dad") != -1) {
       response = "Tell me more about your family.";
+    }
+
+    else if (findKeyword(statement, "Mr. Adiletta") != -1) {
+      response = "Thats a cool teacher.";
     }
     
     // RANDOM
